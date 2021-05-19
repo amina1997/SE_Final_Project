@@ -1,15 +1,17 @@
+
+
 #wrap{
     float:left;
-    color: #f95959;
-    z-index: 3;
+    color: #ffffff !important;
+    z-index: 13;
     position: relative;
+    background-color: #332522;
+    font-family: 'Itim';
 }
+
+
 
 a:link{
     text-decoration: none;
-    color: white;
-}
-
-a{
-    color: #f95959;
+    color: #332522;
 }

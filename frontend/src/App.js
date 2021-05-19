@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Landing from "./components/Landing.js";
+import Profile from "./components/Profile.js";
 import "./styles/App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import Nav from './components/Nav.js';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
 import Authentication from './components/Authentication';
 
 class App extends Component {
@@ -12,9 +11,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          displayed_form: '',
+          error: null,
           logged_in: localStorage.getItem('token') ? true : false,
-          loginemail: ''
+          username: ''
         };
     }
 
@@ -42,13 +41,21 @@ class App extends Component {
           body: JSON.stringify(data)
         })
           .then(res => res.json())
-          .then(json => {
+          .then((json) => {
             localStorage.setItem('token', json.token);
             this.setState({
               logged_in: true,
-              loginemail: json.user.emailAddress
+              username: json.user.username
             });
+          },
+
+          (error) => {
+          this.setState({
+            isLoaded: true,
+            error
           });
+            }
+          );
     };
 
     handle_signup = (e, data) => {
@@ -65,7 +72,6 @@ class App extends Component {
             localStorage.setItem('token', json.token);
             this.setState({
               logged_in: true,
-              displayed_form: '',
               username: json.username
             });
           });
@@ -79,21 +85,23 @@ class App extends Component {
 
 
     render() {
+
+
+
         return (
 
         <Router>
-
             <div>
-
-               {/*
+            {/*
                 <Nav logged_in={this.state.logged_in} handle_logout={this.handle_logout} />
                 <h3>
                     {this.state.logged_in ? `Hello, ${this.state.username}` : 'Please Log In'}
                 </h3>
-                */}
+            */}
                 <Switch>
-                    <Route exact path='/Login' component = {()=> <Authentication handle_signup={this.handle_signup} />} />
+                    <Route exact path='/Login' component = { this.state.logged_in ? () => <Profile name={this.state.username}/> : () => <Authentication handle_signup={this.handle_signup} handle_login={this.handle_login} /> } />
                     <Route exact path='/' component = {()=> <Landing />} />
+                    <Route exact path='/profile' component = {()=> <Profile name={this.state.username}/>} />
                 </Switch>
             </div>
         </Router>

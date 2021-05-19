@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import '../styles/Authentication.sass';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class Authentication extends React.Component {
+
   state = {
-    loginemail: '',
-    loginPassword: ''
+    username: '',
+    password: '',
   };
 
   handle_change = e => {
@@ -20,7 +22,7 @@ class Authentication extends React.Component {
   };
 
 
-    componentDidMount() {
+  componentDidMount() {
 
     'use strict';
 
@@ -136,6 +138,7 @@ class Authentication extends React.Component {
 };
 
   render() {
+
     return (
         <div class="container">
            <section id="formHolder">
@@ -144,16 +147,16 @@ class Authentication extends React.Component {
 
 
                  <div class="col-sm-6 brand">
-                    <a href="#" class="logo">LC <span>.</span></a>
+                    <a href="/" class="logo">LC <span>.</span></a>
 
                     <div class="heading">
                        <h2>Let's Connect</h2>
-                       <p>Your Right Choice</p>
+                       <p>a new way to learn</p>
                     </div>
 
                     <div class="success-msg">
                        <p>Great! You are one of our members now</p>
-                       <a href="#" class="profile">Your Profile</a>
+                       <a href="/profile" class="profile">Your Profile</a>
                     </div>
                  </div>
 
@@ -166,12 +169,12 @@ class Authentication extends React.Component {
                        <form class="login-form" onSubmit={e => this.props.handle_login(e, this.state)} method="post">
                           <div class="form-group">
                              <label for="loginemail">Email Adderss</label>
-                             <input type="email" name="loginemail" id="loginemail" value={this.state.loginemail} onChange={this.handle_change} required/>
+                             <input type="email" name="username" id="loginemail" value={this.state.username} onChange={this.handle_change} required/>
                           </div>
 
                           <div class="form-group">
                              <label for="loginPassword">Password</label>
-                             <input type="password" name="loginPassword" id="loginPassword" value={this.state.loginPassword} onChange={this.handle_change} required/>
+                             <input type="password" name="password" id="loginPassword" value={this.state.password} onChange={this.handle_change} required/>
                           </div>
 
                           <div class="CTA">
@@ -195,7 +198,7 @@ class Authentication extends React.Component {
 
                           <div class="form-group">
                              <label for="email">Email Adderss</label>
-                             <input type="email" name="emailAdress" id="email" class="email"/>
+                             <input type="email" name="emailAdress" id="email" value={this.state.emailAdress} onChange={this.handle_change} class="email"/>
                              <span class="error"></span>
                           </div>
 
@@ -232,7 +235,8 @@ class Authentication extends React.Component {
 }
 
 export default Authentication;
-
+ /*
 Authentication.propTypes = {
   handle_login: PropTypes.func.isRequired
 };
+*/

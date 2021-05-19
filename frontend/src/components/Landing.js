@@ -2,8 +2,7 @@ import React from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/Landing.css";
-import Nav from './Nav.js';
-import logo from './logo.png';
+import logo from '../assets/logo.png';
 
 function Landing() {
 
@@ -232,7 +231,8 @@ function Landing() {
         <div id="overlay" >
             <div className="text"></div>
         </div>
-        <div id='first-text' className="text">The best way to learn is to teach.</div>
+
+        <div id='first-text' className="text">The best way to learn is to <h1>teach</h1></div>
         <div className="text">Lets Connect is a platform that helps you improve your hacking skills by teaching and competing</div>
         <div className="text">you can participate in event and show the bugs you've found and earn points</div>
         <div className="text">and with this points you can be placed in groups of your level and get invited to private events</div>
