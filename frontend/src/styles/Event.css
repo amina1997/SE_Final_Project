@@ -1,0 +1,15 @@
+#main{
+    background-color: #efefef;
+    test-align: center;
+}
+
+#screen{
+    background-image: url("../assets/screen.svg");
+    width: 80%;
+    height: 707px;
+    background-size: contain;
+}
+
+.screen{
+
+}
