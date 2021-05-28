@@ -7,3 +7,4 @@ class LH_Admin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(Show_The_Bug, LH_Admin)
+

@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import $ from 'jquery';
 import '../styles/Authentication.sass';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class Authentication extends React.Component {
 
@@ -23,8 +21,6 @@ class Authentication extends React.Component {
 
 
   componentDidMount() {
-
-    'use strict';
 
     var usernameError = true,
         emailError    = true,
@@ -60,7 +56,7 @@ class Authentication extends React.Component {
         }
         // Email
         if ($(this).hasClass('email')) {
-            if ($(this).val().length == '') {
+            if ($(this).val().length === '') {
                 $(this).siblings('span.error').text('Please type your email address').fadeIn().parent('.form-group').addClass('hasError');
                 emailError = true;
             } else {
@@ -115,7 +111,7 @@ class Authentication extends React.Component {
     $('form.signup-form').submit(function (event) {
         event.preventDefault();
 
-        if (usernameError == true || emailError == true || passwordError == true || passConfirm == true) {
+        if (usernameError === true || emailError === true || passwordError === true || passConfirm === true) {
             $('.name, .email, .pass, .passConfirm').blur();
         } else {
             $('.signup, .login').addClass('switched');
@@ -168,12 +164,12 @@ class Authentication extends React.Component {
                     <div class="login form-peice switched">
                        <form class="login-form" onSubmit={e => this.props.handle_login(e, this.state)} method="post">
                           <div class="form-group">
-                             <label for="loginemail">Email Adderss</label>
+                             <label htmlFor="loginemail">Email Adderss</label>
                              <input type="email" name="username" id="loginemail" value={this.state.username} onChange={this.handle_change} required/>
                           </div>
 
                           <div class="form-group">
-                             <label for="loginPassword">Password</label>
+                             <label htmlFor="loginPassword">Password</label>
                              <input type="password" name="password" id="loginPassword" value={this.state.password} onChange={this.handle_change} required/>
                           </div>
 
@@ -191,30 +187,30 @@ class Authentication extends React.Component {
                        <form class="signup-form" onSubmit={e => this.props.handle_signup(e, this.state)} method="post">
 
                           <div class="form-group">
-                             <label for="name">Full Name</label>
+                             <label htmFor="name">Full Name</label>
                              <input type="text" name="username" id="name" value={this.state.username} onChange={this.handle_change} class="name"/>
                              <span class="error"></span>
                           </div>
 
                           <div class="form-group">
-                             <label for="email">Email Adderss</label>
+                             <label htmlFor="email">Email Adderss</label>
                              <input type="email" name="emailAdress" id="email" value={this.state.emailAdress} onChange={this.handle_change} class="email"/>
                              <span class="error"></span>
                           </div>
 
                           <div class="form-group">
-                             <label for="phone">Phone Number - <small>Optional</small></label>
+                             <label htmlFor="phone">Phone Number - <small>Optional</small></label>
                              <input type="text" name="phone" id="phone"/>
                           </div>
 
                           <div class="form-group">
-                             <label for="password">Password</label>
+                             <label htmlFor="password">Password</label>
                              <input type="password" name="password" id="password" value={this.state.password} onChange={this.handle_change} class="pass"/>
                              <span class="error"></span>
                           </div>
 
                           <div class="form-group">
-                             <label for="passwordCon">Confirm Password</label>
+                             <label htmlFor="passwordCon">Confirm Password</label>
                              <input type="password" name="passwordCon" id="passwordCon" class="passConfirm"/>
                              <span class="error"></span>
                           </div>
@@ -235,8 +231,3 @@ class Authentication extends React.Component {
 }
 
 export default Authentication;
- /*
-Authentication.propTypes = {
-  handle_login: PropTypes.func.isRequired
-};
-*/

@@ -1,22 +1,23 @@
-body,html{
-    background-color: #efefef !important;
-}
 
 #main{
+    background-color: #efefef;
     padding: 70px;
     font-family: 'Itim' !important;
+    background-size: cover;
+    height: 100vh;
 }
 
 /*profile*/
 #personal_info{
-    position: absolute;
-    z-index:3;
+    position: relative;
+    z-index:2;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
     padding: 30px;
     background-color: rgb(255,255,255);
     float: left;
     border-radius: 10px;
     width: 23%;
+
 }
 
 .pic{
@@ -44,6 +45,19 @@ img#log_out:hover{
     font-size: 20px;
     color: #750707;
     text-align: center;
+}
+
+#personal_info a:hover{
+
+    color: #57be91;
+    font-size: 19px;
+
+}
+
+#personal_info a{
+    color: #174477;
+    transition: font-weight 1s ease-in-out;
+    transition: font-size 500ms ease-in-out;
 }
 
 hr.solid {
@@ -75,6 +89,8 @@ hr.solid {
 }
 
 #show_the_bug{
+    transition: font-weight 1s ease-in-out;
+    transition: font-size 500ms ease-in-out;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
     padding: 30px;
     padding-left: 50px;
@@ -87,6 +103,10 @@ hr.solid {
 }
 
 #chat{
+    transition: font-weight 1s ease-in-out;
+    transition: font-size 500ms ease-in-out;
+    position: relative;
+    z-index:2;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
     margin-right:24px;
     padding: 30px;
@@ -98,6 +118,8 @@ hr.solid {
 }
 
 #learn{
+    transition: font-weight 1s ease-in-out;
+    transition: font-size 500ms ease-in-out;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
     padding: 30px;
     float: left;
@@ -110,11 +132,29 @@ hr.solid {
 div#learn:hover{
     background-color: #efefef;
 }
+
 div#chat:hover{
     background-color: #efefef;
 }
+
 div#show_the_bug:hover{
     background-color: #efefef;
+}
+
+#popup-form{
+    color: #57be91;
+}
+
+#popup-form button{
+    color: white ;
+}
+
+.exit{
+    float: right;
+}
+
+#pop-head{
+    color: white;
 }
 
 #clouds{
@@ -148,14 +188,14 @@ div#show_the_bug:hover{
 }
 
 .x1 {
-	animation: moveclouds 31s linear infinite;
+	animation: moveclouds 39s linear infinite;
 	opacity: 0.6;
 }
 
 .x2 {
 	left: 200px;
 	opacity: 0.6;
-	animation: moveclouds 20s linear infinite;
+	animation: moveclouds 27s linear infinite;
 }
 
 .x3 {
@@ -167,16 +207,16 @@ div#show_the_bug:hover{
 .x4 {
 	left: 470px; top: -250px;
 	opacity: 0.75;
-	animation: moveclouds 22s linear infinite;
+	animation: moveclouds 29s linear infinite;
 }
 
 .x5 {
-	left: -150px; top: -150px;
+	left: -250px; top: -150px;
 	opacity: 0.8;
-	animation: moveclouds 30s linear infinite;
+	animation: moveclouds 35s linear infinite;
 }
 
 @keyframes moveclouds {
-  0%   {left:-70px;}
+  0%   {left:-290px;}
   100% {left:2000px;}
 }
