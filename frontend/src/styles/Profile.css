@@ -17,6 +17,16 @@
     float: left;
     border-radius: 10px;
     width: 23%;
+}
+
+#personal_info h3{
+    color: #174477;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#points{
+    color: #174477;
 
 }
 

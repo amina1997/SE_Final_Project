@@ -22,14 +22,14 @@
                0 0 0 #ffffff,
                 10px 10px 10px #cccccc inset,
                 -10px -10px 10px #ffffff inset;
-  animation: anime 5s cubic-bezier(0.16, 1, 0.3, 1) 50ms infinite alternate;
+  animation: anime 6s cubic-bezier(0.16, 1, 0.3, 1) 50ms infinite alternate;
   /* animation-fill-mode: forwards; */
 }
 
 .T{
     padding-top: 30%;
     text-align: center;
-    animation: tanime 5s cubic-bezier(0.16, 1, 0.3, 1) 50ms infinite alternate;
+    animation: tanime 6s cubic-bezier(0.16, 1, 0.3, 1) 50ms infinite alternate;
     border-radius: 20px;
     color:#174477;
 }

@@ -5,4 +5,4 @@ from .models import Event
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('id', 'title', 'speaker', 'description', 'completed', 'date', 'photo')
+        fields = ('id', 'title', 'speaker', 'description', 'completed', 'date', 'photo', 'videoLink')

@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('LetsHack', '0001_initial'),
+        ('EventRequest', '0001_initial'),
     ]
 
     operations = [

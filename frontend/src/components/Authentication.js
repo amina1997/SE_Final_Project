@@ -4,10 +4,14 @@ import '../styles/Authentication.sass';
 
 class Authentication extends React.Component {
 
-  state = {
-    username: '',
-    password: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+        username: '',
+        password: '',
+        email: '',
+    };
+  }
 
   handle_change = e => {
     const name = e.target.name;
@@ -164,8 +168,8 @@ class Authentication extends React.Component {
                     <div class="login form-peice switched">
                        <form class="login-form" onSubmit={e => this.props.handle_login(e, this.state)} method="post">
                           <div class="form-group">
-                             <label htmlFor="loginemail">Email Adderss</label>
-                             <input type="email" name="username" id="loginemail" value={this.state.username} onChange={this.handle_change} required/>
+                             <label htmlFor="loginUsername">User Name</label>
+                             <input type="text" name="username" id="loginUsername" value={this.state.username} onChange={this.handle_change} required/>
                           </div>
 
                           <div class="form-group">
@@ -187,20 +191,15 @@ class Authentication extends React.Component {
                        <form class="signup-form" onSubmit={e => this.props.handle_signup(e, this.state)} method="post">
 
                           <div class="form-group">
-                             <label htmFor="name">Full Name</label>
+                             <label htmFor="name">User Name</label>
                              <input type="text" name="username" id="name" value={this.state.username} onChange={this.handle_change} class="name"/>
                              <span class="error"></span>
                           </div>
 
                           <div class="form-group">
                              <label htmlFor="email">Email Adderss</label>
-                             <input type="email" name="emailAdress" id="email" value={this.state.emailAdress} onChange={this.handle_change} class="email"/>
+                             <input type="email" name="email" id="email" value={this.state.email} onChange={this.handle_change} class="email"/>
                              <span class="error"></span>
-                          </div>
-
-                          <div class="form-group">
-                             <label htmlFor="phone">Phone Number - <small>Optional</small></label>
-                             <input type="text" name="phone" id="phone"/>
                           </div>
 
                           <div class="form-group">

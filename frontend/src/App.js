@@ -16,7 +16,10 @@ class App extends Component {
         this.state = {
           error: null,
           logged_in: localStorage.getItem('token') ? true : false,
-          username: ''
+          username: '',
+          email: '',
+          title: '',
+          points: '',
         };
     }
 
@@ -28,9 +31,19 @@ class App extends Component {
             }
           })
             .then(res => res.json())
-            .then(json => {
-              this.setState({ username: json.username });
-            });
+            .then(
+                (json) => {
+                  this.setState({
+                    username: json.username,
+                    email: json.email,
+                    title: json.profile.title,
+                    points: json.profile.points
+                  });
+                },
+                (error) => {
+
+                }
+            );
         }
     }
 
@@ -48,15 +61,19 @@ class App extends Component {
             localStorage.setItem('token', json.token);
             this.setState({
               logged_in: true,
-              username: json.user.username
+              username: json.user.username,
+              email: json.user.email,
+              title: json.user.profile.title,
+              points: json.user.profile.points
+
             });
           },
 
           (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
+              this.setState({
+                isLoaded: true,
+                error
+              });
             }
           );
     };
@@ -75,7 +92,9 @@ class App extends Component {
             localStorage.setItem('token', json.token);
             this.setState({
               logged_in: true,
-              username: json.username
+              username: json.username,
+              title: json.profile.title,
+              points: json.profile.points
             });
           });
     };
@@ -101,11 +120,11 @@ class App extends Component {
                     {this.state.logged_in ? `Hello, ${this.state.username}` : 'Please Log In'}
                 </h3>
             */}
+
                 <Switch>
-                    <Route exact path='/Login' component = { this.state.logged_in ? () => <Profile name={this.state.username}/> : () => <Authentication handle_signup={this.handle_signup} handle_login={this.handle_login} /> } />
+                    <Route exact path='/Login' component = { this.state.logged_in ? () => <Profile name={this.state.username} email={this.state.email} title={this.state.title} points={this.state.points} /> : () => <Authentication handle_signup={this.handle_signup} handle_login={this.handle_login} /> } />
                     <Route exact path='/' component = {()=> <Landing />} />
-                    <Route exact path='/profile' component = {()=> <Profile name={this.state.username}/>} />
-                    <Route exact path='/ShowTheBug' component = {()=> <ShowTheBug />} />
+                    <Route exact path='/ShowTheBug' component = { ()=> <ShowTheBug />  } />
                     <Route exact path='/event' component = {()=> <Event />} />
                 </Switch>
             </div>

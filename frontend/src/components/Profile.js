@@ -18,6 +18,10 @@ class Profile extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+
+  }
+
   handleChange(event) {
 
   }
@@ -79,8 +83,10 @@ class Profile extends Component {
                         </div>
                     )}
                 </ReactCircleModal>
-                <p>{this.props.name}</p>
-                <p>********Points*******</p>
+                <h3>{this.props.title}</h3>
+                <label htmlFor="points">Points : &nbsp; &nbsp; &nbsp;</label>
+                <progress id="points" value={this.props.points} max="100" />
+
             </div>
 
             <div id='content' >
