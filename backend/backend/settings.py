@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core.apps.CoreConfig',
     'ShowTheBug',
+    'ClassificationModel',
 ]
 
 MIDDLEWARE = [

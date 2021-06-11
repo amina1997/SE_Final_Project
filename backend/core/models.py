@@ -6,8 +6,8 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
-    title = models.TextField(max_length=500, blank=True)
-    points = models.CharField(max_length=30, blank=True)
+    title = models.TextField(max_length=500, default='Krozom')
+    points = models.CharField(max_length=30, default='0')
 
 
 @receiver(post_save, sender=User)

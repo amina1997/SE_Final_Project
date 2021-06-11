@@ -4,20 +4,31 @@
     text-align: center;
 }
 
-
-
 #events{
     margin: auto;
     width: 85%;
+    padding-bottom: 40px !important;
+}
+
+.EventsHeader{
+  box-shadow:  0 0 0 #cccccc,
+               0 0 0 #ffffff,
+                10px 10px 10px #cccccc inset,
+                -10px -10px 10px #ffffff inset;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  margin-top: 150px;
+  clear: both;
+
 }
 
 .event{
-    transition: font-weight 1s ease-in-out;
-    transition: font-size 500ms ease-in-out;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.06);
     padding: 20px;
+
     float: left;
-    background-color: rgb(255,255,255);
+
+    background-color: rgba(255,255,255,0.5);
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -26,30 +37,27 @@
     width: 30%;
     height: 400px;
     font-size: 20px;
+    margin-top: 15px;
 }
-
-
 
 .event p{
     font-size: 20px;
     color: #4d8532;
 }
 
-
-.aaapp {
-  width: 36em;
-  margin: 3em;
+.SearchPreviousEvents {
+    width: 60%;
+    margin-left: 20%;
 }
 
 form {
-
   grid-template-columns: 1fr auto;
   gap: 1em;
   margin-bottom: 1em;
 }
 
 button {
-  background: #17f;
+  background: #174477;
   color: #fff;
   font: inherit;
   border: none;
@@ -57,7 +65,8 @@ button {
   outline: none;
   padding: 0.5em 1.5em;
 }
-button:active { background-color: #05b; }
+
+button:active { background-color: #57be91; }
 
 input {
   border: 1px solid #999;
@@ -79,7 +88,6 @@ ul {
 }
 
 .item {
-
   background: #fff;
   padding: 1em;
   border-radius: 6px;
@@ -92,6 +100,7 @@ ul {
     "d i"
     "m m";
 }
+
 .item:hover { transform: scale(1.02); }
 .item div { grid-area: d; }
 .item img { grid-area: i;width: 100%; }
@@ -101,7 +110,6 @@ ul {
   display: grid;
   grid-auto-flow: column;
   gap: 2em;
-
   font-size: 80%;
   color: #555;
 }

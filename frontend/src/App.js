@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from './components/Nav.js';
 import Authentication from './components/Authentication';
 import Event from './components/Event';
+import Chat from './components/Chat';
 
 
 class App extends Component {
@@ -125,7 +126,7 @@ class App extends Component {
                     <Route exact path='/Login' component = { this.state.logged_in ? () => <Profile name={this.state.username} email={this.state.email} title={this.state.title} points={this.state.points} /> : () => <Authentication handle_signup={this.handle_signup} handle_login={this.handle_login} /> } />
                     <Route exact path='/' component = {()=> <Landing />} />
                     <Route exact path='/ShowTheBug' component = { ()=> <ShowTheBug />  } />
-                    <Route exact path='/event' component = {()=> <Event />} />
+                    <Route exact path='/chat' component = {()=> <Chat />} />
                 </Switch>
             </div>
         </Router>

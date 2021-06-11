@@ -415,7 +415,7 @@ function Landing() {
 
                 <g id="fstar">
                     <image width="707" height="429" transform="translate(728.46 16.5) scale(0.24)"
-                        xlinkHref="https://res.cloudinary.com/dtvy1jqj0/image/upload/v1593347771/misc/fstar.png" />
+                        xlinkHref="https://i.ibb.co/TWfhqRG/fstar.png" />
                     <circle className="over" cx="768.6" cy="78.72" r="39.39" transform="translate(64.22 396.2) rotate(-30.11)"
                         fill="url(#fstar-grad)"  />
                 </g>

@@ -14,4 +14,5 @@ urlpatterns = [
     path('token-auth/', obtain_jwt_token),
     path('core/', include('core.urls')),
     path('chat/', include('chat.urls')),
+    path('', include('ClassificationModel.urls')),
 ]

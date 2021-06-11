@@ -1,4 +1,3 @@
-
 #main{
     background-color: #efefef;
     padding: 70px;
@@ -8,6 +7,7 @@
 }
 
 /*profile*/
+
 #personal_info{
     position: relative;
     z-index:2;
@@ -25,9 +25,13 @@
     margin-bottom: 20px;
 }
 
+#personal_info img{
+    margin-right: -50px;
+    margin-left: 40px;
+}
+
 #points{
     color: #174477;
-
 }
 
 .pic{
@@ -43,11 +47,13 @@
 #log_out {
   width: 40px;
   height: 40px;
+  margin-bottom: 100px;
+  margin-left: 0px;
+
 }
 
 img#log_out:hover{
-  width: 45px;
-  height: 45px;
+
 }
 
 #personal_info p{

@@ -48,7 +48,7 @@ class Authentication extends React.Component {
         // User Name
         if ($(this).hasClass('name')) {
             if ($(this).val().length === 0) {
-                $(this).siblings('span.error').text('Please type your full name').fadeIn().parent('.form-group').addClass('hasError');
+                $(this).siblings('span.error').text('Please type your user name').fadeIn().parent('.form-group').addClass('hasError');
                 usernameError = true;
             } else if ($(this).val().length > 1 && $(this).val().length <= 6) {
                 $(this).siblings('span.error').text('Please type at least 6 characters').fadeIn().parent('.form-group').addClass('hasError');
@@ -73,6 +73,9 @@ class Authentication extends React.Component {
         if ($(this).hasClass('pass')) {
             if ($(this).val().length < 8) {
                 $(this).siblings('span.error').text('Please type at least 8 charcters').fadeIn().parent('.form-group').addClass('hasError');
+                passwordError = true;
+            } else if ($(this).val() === '12345678') {
+                $(this).siblings('span.error').text('sorry password is too week').fadeIn().parent('.form-group').addClass('hasError');
                 passwordError = true;
             } else {
                 $(this).siblings('.error').text('').fadeOut().parent('.form-group').removeClass('hasError');
@@ -156,7 +159,7 @@ class Authentication extends React.Component {
 
                     <div class="success-msg">
                        <p>Great! You are one of our members now</p>
-                       <a href="/profile" class="profile">Your Profile</a>
+                       <a href="/login" class="profile">Your Profile</a>
                     </div>
                  </div>
 

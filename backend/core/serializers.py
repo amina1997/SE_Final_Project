@@ -2,6 +2,7 @@ from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
 from django.contrib.auth.models import User
 from .models import Profile
+import joblib
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -35,6 +36,17 @@ class UserSerializerWithToken(serializers.ModelSerializer):
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
+        NeuralNetwork_Model = joblib.load('C:/Amouna/SE/Final_Project/backend/core/NeuralNetwork_Model.joblib')
+        pwd = [password]
+        NeuralNetwork_Test = NeuralNetwork_Model.predict(pwd)
+
+        if NeuralNetwork_Test == [0]:
+            print('very weak password')
+        if NeuralNetwork_Test == [1]:
+            print('sorry not strong enough')
+        if NeuralNetwork_Test == [2]:
+            print('good enough')
+
         if password is not None:
             instance.set_password(password)
         instance.save()
