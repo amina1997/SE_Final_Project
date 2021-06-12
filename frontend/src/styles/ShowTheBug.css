@@ -46,8 +46,9 @@
 }
 
 .SearchPreviousEvents {
-    width: 60%;
-    margin-left: 20%;
+    margin-top: 80px;
+    width: 70%;
+    margin-left: 30%;
 }
 
 form {
@@ -93,7 +94,6 @@ ul {
   border-radius: 6px;
   box-shadow: 0px 1px 6px 2px #0002;
   transition: transform 100ms ease-in-out;
-
   display: grid;
   gap: 1em;
   grid-template:
@@ -112,4 +112,100 @@ ul {
   gap: 2em;
   font-size: 80%;
   color: #555;
+}
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  /* the hidden clearer */
+}
+.star-cb-group * {
+  font-size: 1rem;
+}
+.star-cb-group > input {
+  display: none;
+}
+.star-cb-group > input + label {
+  /* only enough room for the star */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 1em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.star-cb-group > input + label:before {
+  display: inline-block;
+  text-indent: -9999px;
+  content: "☆";
+  color: #888;
+}
+.star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+  content: "★";
+  color: #e52;
+  text-shadow: 0 0 1px #333;
+}
+.star-cb-group > .star-cb-clear + label {
+  text-indent: -9999px;
+  width: .5em;
+  margin-left: -.5em;
+}
+.star-cb-group > .star-cb-clear + label:before {
+  width: .5em;
+}
+.star-cb-group:hover > input + label:before {
+  content: "☆";
+  color: #888;
+  text-shadow: none;
+}
+.star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+  content: "★";
+  color: #e52;
+  text-shadow: 0 0 1px #333;
+}
+
+.separator {
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #750707;
+  clear: both;
+}
+
+.separator::before,
+.separator::after {
+  color: #174477;
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #174477;
+}
+
+.separator:not(:empty)::before {
+  color: #174477;
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  color: #174477;
+  margin-left: .25em;
+}
+
+.clear-sides{
+    clear: both;
+
+}
+
+.search-pic{
+    float: left;
+    width: 35%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10rem;
+    margin-right: 150px;
 }

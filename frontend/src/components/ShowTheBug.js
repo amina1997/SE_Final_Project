@@ -6,6 +6,7 @@ import StbAnime from '../components/STB_Anime';
 import Event from '../components/Event';
 import ReactCircleModal from 'react-circle-modal'
 import { Redirect } from "react-router-dom";
+import searchPic from '../assets/search.svg';
 
 
 class ShowTheBug extends Component {
@@ -50,6 +51,24 @@ class ShowTheBug extends Component {
                         <button type="button" className="btn btn-danger exit" onClick={onClick}>X</button>
                         <div >
                             <iframe width="727" height="409" src={item.videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" ></iframe>
+                            <form>
+                              <fieldset>
+                                <span class="star-cb-group">
+                                  <input type="radio" id="rating-5" name="rating" value="5" />
+                                  <label for="rating-5">5</label>
+                                  <input type="radio" id="rating-4" name="rating" value="4" checked="checked" />
+                                  <label for="rating-4">4</label>
+                                  <input type="radio" id="rating-3" name="rating" value="3" />
+                                  <label for="rating-3">3</label>
+                                  <input type="radio" id="rating-2" name="rating" value="2" />
+                                  <label for="rating-2">2</label>
+                                  <input type="radio" id="rating-1" name="rating" value="1" />
+                                  <label for="rating-1">1</label>
+                                  <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
+                                  <label for="rating-0">0</label>
+                                </span>
+                              </fieldset>
+                            </form>
                         </div>
                     </div>
                 )}
@@ -92,11 +111,14 @@ class ShowTheBug extends Component {
                 <StbAnime />
 
                 <div id='events'>
+                    <div class="separator">Upcoming Events</div>
 
-                    <h1 className='EventsHeader' >Upcoming Events</h1><br/>
+
                     {this.renderItems()}
-                    <h1 className='EventsHeader' >Previous Events</h1>
 
+                    <p className='clear-sides'></p><br/>
+                    <div class="separator">Previous Events</div>
+                    <img className='search-pic' src={searchPic} alt="search" />
                     <div className="SearchPreviousEvents">
                       <form onSubmit={search}>
                         <input value={this.state.query} onChange={e => this.setState({query:e.target.value})} />

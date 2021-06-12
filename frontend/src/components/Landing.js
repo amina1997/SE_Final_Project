@@ -237,6 +237,8 @@ function Landing() {
         <div className="text">Lets Connect is a platform that helps you improve your hacking skills by teaching and competing</div>
         <div className="text">you can participate in event and show the bugs you've found and earn points</div>
         <div className="text">and with this points you can be placed in groups of your level and get invited to private events</div>
+        <div className="text">and with this points you can be placed in groups of your level and get invited to private events</div>
+        <div className="text"> dont hesitate and <a id='end' href='/login'>lets get started</a></div>
 
         {/*the animated background*/}
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 500" preserveAspectRatio="xMidYMax slice">
