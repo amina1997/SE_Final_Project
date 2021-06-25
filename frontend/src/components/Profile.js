@@ -12,7 +12,11 @@ class Profile extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+        title: '',
+        description: '',
+        date: ''
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,11 +27,18 @@ class Profile extends Component {
   }
 
   handleChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
 
+    this.setState({
+        [name]: value
+    });
   }
 
   handleSubmit(event) {
-
+    alert('your event is submitted: ' + this.state.value);
+    event.preventDefault();
   }
 
     handle_logout = () => {
@@ -62,20 +73,20 @@ class Profile extends Component {
                         <div style={{ backgroundColor: 'rgba(0,0,0, 0)', padding: '90px', margin: 'auto', width: '50%' }}>
                             <button type="button" className="btn btn-danger exit" onClick={onClick}>X</button>
                             <h3 id='pop-head'>Book your event to earn extra points</h3>
-                            <form id='popup-form'onSubmit={this.handleSubmit}>
+                            <form id='popup-form' onSubmit={this.handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="title">title:</label>
-                                    <input type="text" className="form-control" id="title" value={this.state.value} onChange={this.handleChange} />
+                                    <input type="text" className="form-control" id="title" name="title" value={this.state.title} onChange={this.handleChange} />
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="title">Description:</label>
-                                    <input type="text" className="form-control" id="Description" value={this.state.value} onChange={this.handleChange} />
+                                    <input type="text" className="form-control" id="Description" name="description" value={this.state.description} onChange={this.handleChange} />
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="title">Date:</label>
-                                    <input type="date" className="form-control" id="Date" value={this.state.value} onChange={this.handleChange} />
+                                    <input type="date" className="form-control" id="Date" name="date" value={this.state.date} onChange={this.handleChange} />
                                 </div>
 
                                 <button type="submit" className="btn btn-default">Submit</button>

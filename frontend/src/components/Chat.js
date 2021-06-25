@@ -1,5 +1,6 @@
 import React from 'react';
-
+import Sidepanel from './Sidepanel';
+import "../styles/Chat.css";
 import WebSocketInstance from '../websocket';
 
 
@@ -76,6 +77,7 @@ class Chat extends React.Component {
         const messages = this.state.messages;
         return (
             <div id="frame">
+                <Sidepanel />
                 <div className="content">
                     <div className="contact-profile">
                         <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />

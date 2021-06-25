@@ -225,7 +225,7 @@ function Landing() {
 
         <div id='Nav'>
             <img id='logo' src={logo} alt="Logo" />
-            <a id='start' href='/login'>lets get started</a>
+            <a id='start' href='/login'>let&apos;s get started</a>
         </div>
 
         <div id="overlay" >
@@ -234,11 +234,11 @@ function Landing() {
 
         {/*discriptive text*/}
         <div id='first-text' className="text">The best way to learn is to <h1>teach</h1></div>
-        <div className="text">Lets Connect is a platform that helps you improve your hacking skills by teaching and competing</div>
-        <div className="text">you can participate in event and show the bugs you've found and earn points</div>
-        <div className="text">and with this points you can be placed in groups of your level and get invited to private events</div>
-        <div className="text">and with this points you can be placed in groups of your level and get invited to private events</div>
-        <div className="text"> dont hesitate and <a id='end' href='/login'>lets get started</a></div>
+        <div className="text"><h1>Let&apos;s Connect is a platform that helps you improve your hacking skills by teaching and competing</h1></div>
+        <div className="text"><h1>You can participate in event, and show the bugs you&apos;ve found and earn points</h1></div>
+        <div className="text"><h1>And with these points you can be placed in groups of your level and get invited to private events</h1></div>
+        <div className="text"><h1>If you like what you&apos;ve read so far then <a id='end' href='/login'>let&apos;s get started</a></h1></div>
+        <div className="text"> </div>
 
         {/*the animated background*/}
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 500" preserveAspectRatio="xMidYMax slice">

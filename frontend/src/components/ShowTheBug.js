@@ -50,22 +50,22 @@ class ShowTheBug extends Component {
                     <div style={{ backgroundColor: 'rgba(0,0,0, 0)', padding: '10px', margin: 'auto', width: '50%' }}>
                         <button type="button" className="btn btn-danger exit" onClick={onClick}>X</button>
                         <div >
-                            <iframe width="727" height="409" src={item.videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true" ></iframe>
+                            <iframe width="727" height="409" src={item.videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true" ></iframe>
                             <form>
                               <fieldset>
                                 <span class="star-cb-group">
                                   <input type="radio" id="rating-5" name="rating" value="5" />
-                                  <label for="rating-5">5</label>
+                                  <label htmlFor="rating-5">5</label>
                                   <input type="radio" id="rating-4" name="rating" value="4" checked="checked" />
-                                  <label for="rating-4">4</label>
+                                  <label htmlFor="rating-4">4</label>
                                   <input type="radio" id="rating-3" name="rating" value="3" />
-                                  <label for="rating-3">3</label>
+                                  <label htmlFor="rating-3">3</label>
                                   <input type="radio" id="rating-2" name="rating" value="2" />
-                                  <label for="rating-2">2</label>
+                                  <label htmlFor="rating-2">2</label>
                                   <input type="radio" id="rating-1" name="rating" value="1" />
-                                  <label for="rating-1">1</label>
+                                  <label htmlFor="rating-1">1</label>
                                   <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" />
-                                  <label for="rating-0">0</label>
+                                  <label htmlFor="rating-0">0</label>
                                 </span>
                               </fieldset>
                             </form>
@@ -120,7 +120,7 @@ class ShowTheBug extends Component {
                     <div class="separator">Previous Events</div>
                     <img className='search-pic' src={searchPic} alt="search" />
                     <div className="SearchPreviousEvents">
-                      <form onSubmit={search}>
+                      <form id='searchForm' onSubmit={search}>
                         <input value={this.state.query} onChange={e => this.setState({query:e.target.value})} />
                         <button>Search Previous Events</button>
                       </form>
@@ -129,19 +129,19 @@ class ShowTheBug extends Component {
                           ? <p>No results</p>
                           : (
                             <ul className="items">
-                              {this.state.list.map(uitem => (
-                                <li className="item" key={uitem.id}>
+                              {this.state.list.map(Pitem => (
+                                <li className="item" key={Pitem.id}>
                                   <div>
-                                    <b><a href={uitem.link}>{uitem.title}</a></b>
-                                    <p>{uitem.description}</p>
+                                    <b><a href={Pitem.url}>{Pitem.title}</a></b>
+                                    <p>{Pitem.description}</p>
                                   </div>
                                   <ul className="meta">
-                                    <li>By: <a href={uitem.author.ref}>{uitem.author.name}</a></li>
-                                    <li>Views: {uitem.views}</li>
-                                    <li>Duration: {uitem.duration}</li>
-                                    <li>Uploaded: {uitem.uploaded_at}</li>
+                                    <li>By: <a href={Pitem.author.ref}>{Pitem.author.name}</a></li>
+                                    <li>Views: {Pitem.views}</li>
+                                    <li>Duration: {Pitem.duration}</li>
+                                    <li>Uploaded: {Pitem.uploadedAt}</li>
                                   </ul>
-                                  <img alt="" src={uitem.thumbnail} />
+                                  <img alt="tete" src={Pitem.bestThumbnail.url} />
                                 </li>
                               ))}
                             </ul>

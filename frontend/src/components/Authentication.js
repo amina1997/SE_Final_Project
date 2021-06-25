@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import '../styles/Authentication.sass';
+import join from '../assets/join.svg';
 
 class Authentication extends React.Component {
 
@@ -153,8 +154,8 @@ class Authentication extends React.Component {
                     <a href="/" class="logo">LC <span>.</span></a>
 
                     <div class="heading">
-                       <h2>Let's Connect</h2>
-                       <p>a new way to learn</p>
+                        <img className='join' src={join} alt="profile..." />
+
                     </div>
 
                     <div class="success-msg">
