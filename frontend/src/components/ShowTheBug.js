@@ -141,7 +141,7 @@ class ShowTheBug extends Component {
                                     <li>Duration: {Pitem.duration}</li>
                                     <li>Uploaded: {Pitem.uploadedAt}</li>
                                   </ul>
-                                  <img alt="tete" src={Pitem.bestThumbnail.url} />
+                                  <img alt="" src={Pitem.bestThumbnail.url} />
                                 </li>
                               ))}
                             </ul>

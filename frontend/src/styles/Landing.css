@@ -18,9 +18,10 @@ body::-webkit-scrollbar {
 }
 
 #start{
-    font-family: 'Righteous';
-    color: white;
+    font-family: 'Poppins';
+    color: #ffffff;
     float: right;
+    margin-top: 10px;
     transition: font-weight 1s ease-in-out;
     transition: font-size 500ms ease-in-out;
 }
@@ -31,7 +32,7 @@ body::-webkit-scrollbar {
 }
 
 #logo{
-    width:100px;
+    width:120px;
 }
 
 svg {
@@ -73,8 +74,8 @@ svg {
   bottom: 0;
   /*
   background-color: rgba(239,239,239,0.6);
-  background-image: url("../assets/bg2.png");
   */
+  background-image: url("../assets/bg.png");
   background-size: cover;
   z-index: 2;
   cursor: pointer;
@@ -83,7 +84,7 @@ svg {
 .text{
   z-index: 3;
   margin: auto;
-  font-family: 'Righteous';
+  font-family: 'Poppins';
   font-size: 47px !important;
   position: relative;
   color: #ffffff;
@@ -94,19 +95,20 @@ svg {
   backdrop-filter: blur(0px);
   padding: 10px;
   border-radius: 5px;
-  background: -webkit-linear-gradient(#191531, #ffffff);
+  background: -webkit-linear-gradient(#57be91, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
 }
 
 #first-text{
-    font-size: 63px;
+    font-size: 61px;
     color: white;
 }
 
 #first-text h1{
     font-size: 83px;
-    font-family: 'Righteous';
+    font-family: 'Poppins';
 }
 
 #end a:hover{
@@ -116,5 +118,5 @@ svg {
 }
 
 #end{
- color: #8c245a;
+ color: #ffffff !important;
 }

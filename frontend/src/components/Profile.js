@@ -5,17 +5,19 @@ import learn from '../assets/learn.svg';
 import chat from '../assets/chat.svg';
 import showTheBug from '../assets/showTheBug.svg';
 import "../styles/Profile.css";
-import ReactCircleModal from 'react-circle-modal'
+import ReactCircleModal from 'react-circle-modal';
+import axios from "axios";
 
 
 class Profile extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
-        title: '',
-        description: '',
-        date: ''
+        RequestedEventTitle: '',
+        RequestedEventDescription: '',
+        RequestedEventDate: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,9 +39,30 @@ class Profile extends Component {
   }
 
   handleSubmit(event) {
-    alert('your event is submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+    const evetRequest = {
+      RequestedEventTitle: this.state.RequestedEventTitle,
+      RequestedEventDescription: this.state.RequestedEventDescription,
+      RequestedEventDate: this.state.RequestedEventDate,
+    }
+
+    axios.post("http://localhost:8000/api/form/",
+    {
+      RequestedEventTitle: this.state.RequestedEventTitle,
+      RequestedEventDescription: this.state.RequestedEventDescription,
+      RequestedEventDate: this.state.RequestedEventDate,
+    },
+    {
+        headers: {
+                  Authorization: `JWT ${localStorage.getItem('token')}`
+                }
+    }
+
+      )
+      .then(res=>{
+        console.log(res);
+        console.log(res.data);
+    })
+    }
 
     handle_logout = () => {
         localStorage.removeItem('token');
@@ -68,25 +91,25 @@ class Profile extends Component {
 
                 {/*The Popup*/}
 
-                <ReactCircleModal backgroundColor="rgba(23,68,119, 0.8)" toogleComponent={onClick => ( <a href="#" onClick={onClick} >Earn points</a> )} offsetX={0} offsetY={0} >
+                <ReactCircleModal backgroundColor="rgba(23,68,119, 0.9)" toogleComponent={onClick => ( <a href="#" onClick={onClick} >Earn points</a> )} offsetX={0} offsetY={0} >
                     {(onClick) => (
-                        <div style={{ backgroundColor: 'rgba(0,0,0, 0)', padding: '90px', margin: 'auto', width: '50%' }}>
+                        <div style={{ backgroundColor: 'rgba(0,0,0,0)', padding: '90px', margin: 'auto', width: '50%' }}>
                             <button type="button" className="btn btn-danger exit" onClick={onClick}>X</button>
                             <h3 id='pop-head'>Book your event to earn extra points</h3>
                             <form id='popup-form' onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="title">title:</label>
-                                    <input type="text" className="form-control" id="title" name="title" value={this.state.title} onChange={this.handleChange} />
+                                    <label htmlFor="RequestedEventTitle">title:</label>
+                                    <input type="text" className="form-control" id="RequestedEventTitle" name="RequestedEventTitle" value={this.state.RequestedEventTitle} onChange={this.handleChange} />
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="title">Description:</label>
-                                    <input type="text" className="form-control" id="Description" name="description" value={this.state.description} onChange={this.handleChange} />
+                                    <label htmlFor="RequestedEventDescription">Description:</label>
+                                    <input type="text" className="form-control" id="RequestedEventDescription" name="RequestedEventDescription" value={this.state.RequestedEventDescription} onChange={this.handleChange} />
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="title">Date:</label>
-                                    <input type="date" className="form-control" id="Date" name="date" value={this.state.date} onChange={this.handleChange} />
+                                    <label htmlFor="RequestedEventDate">Date:</label>
+                                    <input type="date" className="form-control" id="RequestedEventDate" name="RequestedEventDate" value={this.state.RequestedEventDate} onChange={this.handleChange} />
                                 </div>
 
                                 <button type="submit" className="btn btn-default">Submit</button>

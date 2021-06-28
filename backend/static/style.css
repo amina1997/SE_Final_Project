@@ -417,7 +417,8 @@ body {
   }
 }
 #frame #sidepanel #contacts ul li.contact .wrap .meta .name {
-  font-weight: 600;
+  font-weight: 300;
+  font-size: 17px;
 }
 #frame #sidepanel #contacts ul li.contact .wrap .meta .preview {
   margin: 5px 0 0 0;
@@ -675,4 +676,13 @@ body {
 
 #icon{
     color: #174477;
+}
+
+.wrap p{
+  font-weight: 300;
+  font-size: 13px;
+}
+
+#user{
+    font-size: 17px;
 }
