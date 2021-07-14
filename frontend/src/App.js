@@ -91,13 +91,15 @@ class App extends Component {
           .then(res => res.json())
           .then(json => {
             localStorage.setItem('token', json.token);
+            console.log(json);
             this.setState({
               logged_in: true,
               username: json.username,
-              title: json.profile.title,
-              points: json.profile.points
             });
           });
+
+          var delayInMilliseconds = 800;
+          setTimeout(function() { window.location.reload(); }, delayInMilliseconds);
     };
 
     handle_logout = () => {

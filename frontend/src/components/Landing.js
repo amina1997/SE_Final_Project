@@ -233,13 +233,11 @@ function Landing() {
         </div>
 
         {/*discriptive text*/}
-        <div id='first-text' className="text">The best way to learn is by <h1>teaching</h1></div>
+        <div id='first-text' className="text">Learn, Find Bugs and <h1>teach</h1></div>
         <div className="text"><h1>Let&apos;s Connect is a platform that helps you improve your hacking skills by teaching and competing</h1></div>
         <div className="text"><h1>You can participate in event, where you can show the bugs you&apos;ve found and earn points</h1></div>
         <div className="text"><h1>And with these points you will get placed in groups of your level and get invited to private events</h1></div>
-        <div className="text"><h1>If you like what you&apos;ve read so far then <a id='end' href='/login'>let&apos;s get started</a></h1></div>
-        <div className="text"> </div>
-
+        <div className="text"><h1>If you like what you&apos;ve read so far then <a id="end" href='/login'>let&apos;s get started</a></h1></div>
         {/*the animated background*/}
         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 750 500" preserveAspectRatio="xMidYMax slice">
             <defs>

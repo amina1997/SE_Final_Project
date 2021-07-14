@@ -169,7 +169,10 @@ div#show_the_bug:hover{
 }
 
 #popup-form button{
-    color: white ;
+    color: #174477 ;
+    font-size: 20px;
+    margin-left: -10px;
+    font-family: 'OCRAEXT';
 }
 
 .exit{
@@ -177,7 +180,7 @@ div#show_the_bug:hover{
 }
 
 #pop-head{
-    color: white;
+    color: #174477;
 }
 
 #clouds{
@@ -242,4 +245,8 @@ div#show_the_bug:hover{
 @keyframes moveclouds {
   0%   {left:-290px;}
   100% {left:2000px;}
+}
+
+#modal{
+    background-image: url("../assets/bg.png");
 }

@@ -91,9 +91,9 @@ class Profile extends Component {
 
                 {/*The Popup*/}
 
-                <ReactCircleModal backgroundColor="rgba(23,68,119, 0.9)" toogleComponent={onClick => ( <a href="#" onClick={onClick} >Earn points</a> )} offsetX={0} offsetY={0} >
+                <ReactCircleModal id="modal" backgroundColor="rgba(23,68,119, 0.9)" toogleComponent={onClick => ( <a href="#" onClick={onClick} >Earn points</a> )} offsetX={0} offsetY={0} >
                     {(onClick) => (
-                        <div style={{ backgroundColor: 'rgba(0,0,0,0)', padding: '90px', margin: 'auto', width: '50%' }}>
+                        <div style={{ backgroundColor: '#efefef', padding: '90px', margin: 'auto', width: '50%', borderRadius: '10px' }}>
                             <button type="button" className="btn btn-danger exit" onClick={onClick}>X</button>
                             <h3 id='pop-head'>Book your event to earn extra points</h3>
                             <form id='popup-form' onSubmit={this.handleSubmit}>
@@ -124,7 +124,7 @@ class Profile extends Component {
             </div>
 
             <div id='content' >
-                <div id='greeting' ><h1>Lets get started</h1></div>
+                <div id='greeting' ><h1>Let's get started</h1></div>
                 <div>
                     <a href='http://localhost:3000/ShowTheBug' ><div className='options' id='show_the_bug' ><img className='pic' src={showTheBug} alt="profile..." /><p>Show The Bug</p></div></a>
                     <a href='http://127.0.0.1:8000/chat/' ><div className='options' id='chat' ><img className='pic' src={chat} alt="profile..." /><p>chat & chat</p></div></a>
